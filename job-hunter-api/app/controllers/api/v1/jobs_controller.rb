@@ -27,7 +27,7 @@ class Api::V1::JobsController < ApplicationController
   # PATCH/PUT /jobs/1
   def update
     if @job.update(job_params)
-      render json: @job
+      render json: @job, status: 200
     else
       render json: @job.errors, status: :unprocessable_entity
     end
