@@ -5,12 +5,12 @@ class Api::V1::JobsController < ApplicationController
   def index
     @jobs = Job.all
 
-    render json: @jobs
+    render json: @jobs, status: 200
   end
 
   # GET /jobs/1
   def show
-    render json: @job
+    render json: @job, status: 200
   end
 
   # POST /jobs
