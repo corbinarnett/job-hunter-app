@@ -5,12 +5,12 @@ class Api::V1::ListsController < ApplicationController
   def index
     @lists = List.all
 
-    render json: @lists
+    render json: @lists, status: 200
   end
 
   # GET /lists/1
   def show
-    render json: @list
+    render json: @list, status: 200
   end
 
   # POST /lists
@@ -27,7 +27,7 @@ class Api::V1::ListsController < ApplicationController
   # PATCH/PUT /lists/1
   def update
     if @list.update(list_params)
-      render json: @list
+      render json: @list, status: 200
     else
       render json: @list.errors, status: :unprocessable_entity
     end
